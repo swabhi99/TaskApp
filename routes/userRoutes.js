@@ -256,7 +256,7 @@ router.post('/forgot/:token',async(req,res)=>{
   router.post('/logout',auth,(req,res)=>{
       console.log(req.user.token)
       localStorage.setItem('x-auth-token','')
-      res.redirect('/home')
+      res.redirect('/')
   })
 
 module.exports = router
