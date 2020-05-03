@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const config = require('config')
+require('dotenv').config()
 
 if (typeof localStorage === "undefined" || localStorage === null) {
     const LocalStorage = require('node-localstorage').LocalStorage;
@@ -20,7 +20,7 @@ const token = localStorage.getItem('x-auth-token')
  }
 
   try {
-      const decoded = jwt.verify(token,config.get('jwtsecret'))
+      const decoded = jwt.verify(token,process.env.jwtsecret)
        req.user=decoded.user
        console.log(decoded)
        next()

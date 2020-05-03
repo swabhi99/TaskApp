@@ -4,7 +4,7 @@ const { check, validationResult } = require('express-validator')
 const bcrypt=require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
-const config = require('config')
+require('dotenv').config()
 
 const auth = require('../middleware/auth')
 const User = require('../models/User') 
@@ -90,7 +90,7 @@ router.post('/register',[
         }
     
         jwt.sign(payload,
-            config.get('jwtsecret'),
+            process.env.jwtsecret,
             (err,token) => {
                 if(err) throw err
                const x= localStorage.setItem('x-auth-token',token)
@@ -143,7 +143,7 @@ router.post('/login',[
     }
 
     jwt.sign(payload,
-        config.get('jwtsecret'),
+        process.env.jwtsecret,
         (err,token) => {
             if(err) throw err
             localStorage.setItem('x-auth-token',token)
