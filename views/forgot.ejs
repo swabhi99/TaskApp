@@ -1,0 +1,22 @@
+<%- include('partials/header')%>
+
+<div class="container">
+
+    <%if(locals.msg){%>
+        <ul>
+            <li class="text-danger"><%= msg%></li>
+        </ul>
+    <% } %>
+ 
+    <form action="/forgot/<%=token%>" method="POST" class="ml-5">
+        <label for="password">Enter New Password</label>
+        <input type="password" name="password" class="form-control w-50">
+        <label for="password2">Confirm new Password</label>
+        <input type="password" name="password2" class="form-control w-50">
+        <button type="submit">submit</button>
+    </form>
+
+</div>
+    
+</body>
+</html>
