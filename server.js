@@ -25,5 +25,5 @@ app.use('',require('./routes/userRoutes'))
 app.use('',require('./routes/notesRoutes'))
 
 app.listen(port,()=>{
-    console.log(`server is on port' + ${port}`)
+    console.log(`server is on port' ${port}`)
 })
