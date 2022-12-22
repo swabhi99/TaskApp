@@ -21,7 +21,7 @@
     "ejs": "^3.1.2",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.10",
     "node-localstorage": "^2.1.6",
     "nodemailer": "^6.4.6"
